@@ -1,0 +1,9 @@
+node_modules/
+dist/
+# .vscode/
+coverage/*
+cert/*
+$Recycle.Bin
+upload/
+tmp/
+# package-lock.json

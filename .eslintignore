@@ -1,0 +1,5 @@
+.eslintrc.js
+ecosystem.config.js
+.vscode/*
+node_modules/*
+# src/*.ts
