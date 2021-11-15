@@ -26,8 +26,7 @@ export function Http(option: { methods: Methods[]; path: string }): MethodDecora
             key, // 函数名
             {
                 path: option.path,
-                methods: option.methods,
-                value: descriptor.value
+                methods: option.methods
             },
             target // class 实体
         );

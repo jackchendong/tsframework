@@ -42,7 +42,7 @@ export class TsFrameWork extends Koa {
                             prefix
                         });
                         obj.methods.forEach((e) => {
-                            router[e](obj.path, obj.value.bind(instance)); // 需要绑定初始化的实例
+                            router[e](obj.path, Reflect.get(instance, ele).bind(instance)); // 需要绑定初始化的实例
                         });
                         this.use(router.routes()).use(router.allowedMethods());
                     });
