@@ -20,7 +20,7 @@ export class TsFrameWork extends Koa {
             protocol: "http" | "https";
             tls?: { cert: string; key: string };
         }[];
-        middlewares?: [];
+        middlewares?: any[];
         routerPath?: string; // router 目录
     }) {
         super();
@@ -41,10 +41,12 @@ export class TsFrameWork extends Koa {
                         let router = new Router({
                             prefix
                         });
-                        obj.methods.forEach((e) => {
-                            router[e](obj.path, Reflect.get(instance, ele).bind(instance)); // 需要绑定初始化的实例
-                        });
-                        this.use(router.routes()).use(router.allowedMethods());
+                        if (obj) {
+                            obj.methods.forEach((e) => {
+                                router[e](obj.path, Reflect.get(instance, ele).bind(instance)); // 需要绑定初始化的实例
+                            });
+                            this.use(router.routes()).use(router.allowedMethods());
+                        }
                     });
                     //参考写法
                     // const instance = new clazz();

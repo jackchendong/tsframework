@@ -15,6 +15,14 @@ export class Util {
     static isArray(input: any): boolean {
         return Object.prototype.toString.call(input) == "[object Array]";
     }
+
+    /**
+     *  判断array类型
+     * @param input
+     */
+    static isNumber(input: any): boolean {
+        return !isNaN(input) && Object.prototype.toString.call(input) == "[object Number]";
+    }
     /***************************************************************************************************************************************************** */
     /**
      * 检查手机号
